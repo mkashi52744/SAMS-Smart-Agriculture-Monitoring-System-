@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlMain_Ac"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+
+    tools:context=".MainActivity">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        app:itemBackground="@color/teal_200"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_bottom"
+        tools:ignore="MissingConstraints" />
+    <RelativeLayout
+        android:id="@+id/rlWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rlMain"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_height="240dp"
+            android:background="#03A9F4"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/txtCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="City"
+                android:textColor="#ffffff"
+                android:textSize="32dp" />
+
+            <TextView
+                android:id="@+id/txtTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtCity"
+                android:fontFamily="sans-serif"
+                android:text="Time"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:id="@+id/imgIcon"
+                android:layout_width="108dp"
+                android:layout_height="126dp"
+                android:layout_below="@id/txtTime"
+                android:layout_marginTop="14dp"
+                android:src="@drawable/phc" />
+
+            <TextView
+                android:id="@+id/txtValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/imgIcon"
+                android:layout_alignParentRight="true"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="0.0°"
+                android:textColor="#ffffff"
+                android:textSize="70dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlSub"
+            android:layout_width="375dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlMain"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#ffffff"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp">
+
+            <ImageView
+                android:id="@+id/imgFeelLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/temp" />
+
+            <TextView
+                android:id="@+id/txtTitleFeelLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/imgFeelLike"
+                android:text="Feel Like"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/txtValueFeelLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTitleFeelLike"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/imgFeelLike"
+                android:text="0.0°"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/imgHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgFeelLike"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/humidity" />
+
+            <TextView
+                android:id="@+id/txtTitleHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/imgHumidity"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/imgHumidity"
+                android:text="Humidity"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/txtValueHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTitleHumidity"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/imgHumidity"
+                android:text="0%"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/imgVision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgHumidity"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/wind" />
+
+            <TextView
+                android:id="@+id/txtTitleVision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/imgVision"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/imgVision"
+                android:text="Wind Speed"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/txtValueVision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTitleVision"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/imgVision"
+                android:text="0 m/s"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/imgVision1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgVision"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/temp" />
+
+            <TextView
+                android:id="@+id/txtTitleVision1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/imgVision1"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/imgVision1"
+                android:text="Minimum Temperature"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/txtValueVision1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTitleVision1"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/imgVision1"
+                android:text="0.0°"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/imgVision2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgVision1"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/temp" />
+
+            <TextView
+                android:id="@+id/txtTitleVision2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/imgVision2"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/imgVision2"
+                android:text="Maximum Temperature"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/txtValueVision2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTitleVision2"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/imgVision2"
+                android:text="0.0°"
+                android:textSize="20dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/edt_input"
+        android:layout_width="326dp"
+        android:layout_height="35dp"
+        android:hint="Your City"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="60dp"
+        android:background="@drawable/round"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp" />
+
+    <ImageView
+        android:id="@+id/click"
+        android:layout_width="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:onClick="loading"
+        app:srcCompat="@android:drawable/ic_search_category_default" />
+
+</RelativeLayout>
